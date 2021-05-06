@@ -1,0 +1,74 @@
+public class Biblioteca {
+	ArrayList<Usuario> cadastroUsuario = new ArrayList<Usuario>();
+	ArrayList<Livro> cadastraLivro = new ArrayList<Livro>();
+
+	Usuario aluno = null;
+	Usuario prof = null;
+
+	Livro livro = null;
+
+	Scanner leitor = new Scanner(System.in);
+
+	// -----------------------------------------------------------------------------------------------
+	public void cadastroUsuario() {
+		System.out.println("Digite 1 para Aluno\nDigite 2 para Professor");
+		int menu = leitor.nextInt();
+
+		if (menu == 1) {
+			aluno = new Usuario();
+			aluno.setNome(leitor.nextLine());
+
+			System.out.println("Entre com o seu nome");
+			aluno.setNome(leitor.nextLine());
+			System.out.println("Entre com o endereço");
+			aluno.setEndereco(leitor.nextLine());
+			System.out.println("Entre com o curso");
+			aluno.setCurso(leitor.nextLine());
+
+			System.out.println("Cadastro Realizado com Sucesso!");
+
+			cadastroUsuario.add(aluno);
+		}
+
+		else if (menu == 2) {
+			prof = new Usuario();
+			prof.setNome(leitor.nextLine());
+
+			System.out.println("Entre com o nome");
+			prof.setNome(leitor.nextLine());
+			System.out.println("Entre com o endereço");
+			prof.setEndereco(leitor.nextLine());
+			System.out.println("Entre com o curso");
+			prof.setCurso(leitor.nextLine());
+			System.out.println("Entre com o sua especialização");
+			prof.setEspecializacao(leitor.nextLine());
+
+			System.out.println("Cadastro Realizado com Sucesso!");
+			cadastroUsuario.add(prof);
+		}
+	}
+	// -----------------------------------------------------------------------------------------------
+	public void cadastroLivro() {
+		livro = new Livro();
+
+		System.out.println("Entre com o titulo do livro");
+		livro.setTitulo(leitor.nextLine());
+		System.out.println("Entre com o autor");
+		livro.setAutor(leitor.nextLine());
+		System.out.println("Entre com o codigo do livro");
+		livro.setCodigo(leitor.nextLine());
+
+		System.out.println("Cadastro Realizado com Sucesso!");
+
+		cadastraLivro.add(livro);
+	}
+	// -----------------------------------------------------------------------------------------------
+	public void emprestimoLivro() {
+		/*
+		 * int i = 0; for (Livro livro : cadastraLivro) { if
+		 * (livro.contains(livro) == true) { i++; } } if (i == 0)
+		 * System.out.println("Não Existe existe livros cadastrados!");
+		 * 
+		 * if (i>0) System.out.println("Foram encontradas "+i+
+		 * " ocorrencias de livros cadastrados");
+		 */
